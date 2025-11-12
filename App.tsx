@@ -8,13 +8,17 @@ import {
   Alert,
 } from "react-native";
 import React, { useState } from 'react';
+import ChefsScreen from "./src/screens/ChefsScreen";
+import RecipesScreen from "./src/screens/RecipesScreen";
+import HubScreen from "./src/screens/HubScreen";
+import HomeScreen from "./src/screens/HomeScreen";
 
 type MenuItem = {
   id: string;
   name: string;
   desc: string;
   course: string;
-  price: string;
+  price: number;
 };
 
 export default function App() {
@@ -26,7 +30,7 @@ export default function App() {
   const [price, setPrice] = useState("");
   const [search, setSearch] = useState("");
 
-  const [chefName, setChefName] = useState("Chef Anonymous");
+  const [chefName, setChefName] = useState("Chef Cristoffel");
   const [photoText, setPhotoText] = useState("🙂");
 
   function addItem() {
@@ -40,7 +44,7 @@ export default function App() {
       name,
       desc,
       course,
-      price,
+      price: Number(price),
     };
 
     setMenu([...menu, newItem]);
@@ -103,7 +107,7 @@ export default function App() {
                   <Text style={styles.menuTitle}>{item.name}</Text>
                   <Text style={styles.menuText}>{item.desc}</Text>
                   <Text style={styles.menuText}>Course: {item.course}</Text>
-                  <Text style={styles.menuText}>Price: ${item.price}</Text>
+                  <Text style={styles.menuText}>Price: R{item.price}</Text>
 
                   <TouchableOpacity
                     onPress={() => removeItem(item.id)}
@@ -315,3 +319,5 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 });
+
+export type { MenuItem };

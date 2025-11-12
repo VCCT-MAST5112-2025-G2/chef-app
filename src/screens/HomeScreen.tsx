@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity } from "react-native";
-import { styles } from "./styles.ts";
-import MenuCard from "../components/MenuCard";
+import { styles } from "../../styles";
 import { MenuItem } from "../../App";
+import MenuCard from "../../Menu";
 
 type HomeScreenProps = {
   chefName: string;

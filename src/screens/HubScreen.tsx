@@ -1,5 +1,5 @@
 import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
-import { styles } from "../styles";
+import { styles } from "../../styles";
 import { MenuItem } from "../../App";
 import React, { useState } from 'react';
 
@@ -36,7 +36,7 @@ export default function HubScreen({
       name,
       desc,
       course,
-      price,
+      price: parseFloat(price),
     };
 
     setMenu([...menu, newItem]);

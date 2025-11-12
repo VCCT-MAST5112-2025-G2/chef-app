@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity } from "react-native";
-import { styles } from "../styles";
-import { MenuItem } from "../../App";
+import { styles } from "./styles";
+import { MenuItem } from './App';
 
 type MenuCardProps = {
   item: MenuItem;
@@ -13,7 +13,7 @@ export default function MenuCard({ item, removeItem }: MenuCardProps) {
       <Text style={styles.menuTitle}>{item.name}</Text>
       <Text style={styles.menuText}>{item.desc}</Text>
       <Text style={styles.menuText}>Course: {item.course}</Text>
-      <Text style={styles.menuText}>Price: ${item.price}</Text>
+      <Text style={styles.menuText}>Price: R{item.price}</Text>
 
       <TouchableOpacity
         style={styles.removeBtn}
